@@ -2,8 +2,7 @@ var strTitle = 'ZAutomate';
 var user = Ext.util.Cookies.get("user");
 Ext.define('LoginApp.view.Home', {
       extend : 'Ext.panel.Panel',
-
-      title : 'Zautomate',
+	  title : 'Zautomate',
       alias : 'widget.home',
       layout : 'border',
       frame : true,
@@ -20,12 +19,7 @@ Ext.define('LoginApp.view.Home', {
         items : [{
               xtype : 'button',
               text : 'Logout',
-              handler : function(button) {
-              	var home = button.up('home')
-                Ext.util.Cookies.clear('user');
-              	home.close();
-              	Ext.create('LoginApp.view.Login');
-              }
+              itemId : 'logout'
             }]
       },
       items : [{

@@ -5,31 +5,29 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home</title>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <link href="resources/extjs/ext-theme-neptune-all.css" rel="stylesheet"  type="text/css" />
-        <script type="text/javascript" src="resources/extjs/ext-all.js"></script>
-   		<script type="text/javascript" src="app/app.js"></script>
-    </head>
-    <body>
-        <%-- <form action="/SpringMvc/submitForm" method="post">
-        <table>
-        	<tr>
-        		<td><label>Name:</label></td>
-        		<td><input name="name" /></td>
-        	</tr>
-        	<tr>
-        		<td><label>Definition:</label></td>
-        		<td><input name="definition" /></td>
-        	</tr>
-        	<tr>
-        	<td><input type="Submit" value="Submit" /></td>
-        	</tr>
-        </table>
-        
-        
-        </form> --%>
-    </body>
+<title>Home</title>
+
+<link href="resources/extjs/ext-theme-neptune-all.css" rel="stylesheet"
+	type="text/css" />
+<script type="text/javascript" src="resources/extjs/ext-all.js"></script>
+<script type="text/javascript" src="app/facebook.js"></script>
+<script type="text/javascript" src="app/app.js"></script>
+
+</head>
+<body>
+	
+
+<!-- 	<div class="fb-like" data-send="true" data-width="450"
+		data-show-faces="true"></div>
+
+	<div class="fb-login-button" data-size="large" data-show-faces="false"
+		data-auto-logout-link="false"></div> -->
+
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+
+	<div id="status"></div>
+</body>
 </html>

@@ -13,6 +13,9 @@ Ext.define('LoginApp.controller.Home', {
               },
               'home #removeUser' : {
                 click : this.removeUser
+              },
+              'home #logout' : {
+                click : this.logout
               }
 
             });
@@ -43,6 +46,25 @@ Ext.define('LoginApp.controller.Home', {
         // this.getStore('Users').remove(sm.getSelection());
 
         this.getUsersStore().sync();
+
+      },
+
+      logout : function(button) {
+
+        var home = button.up('home')
+
+        FB.logout(function(response) {
+              // user is now logged out
+             
+            });
+        Ext.util.Cookies.clear('c_user');
+        Ext.util.Cookies.clear('user');
+
+        home.close();
+        // Ext.create('LoginApp.view.Login');
+
+        location.href = "/SpringMvc/logout";
+        //window.location = "/SpringMvc/index";
 
       }
 

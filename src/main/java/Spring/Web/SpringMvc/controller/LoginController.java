@@ -41,7 +41,6 @@ public class LoginController {
 		return new ModelAndView("home");
 	}
 	@RequestMapping(value = "/logout")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public ModelAndView logout(HttpServletResponse response, HttpServletRequest request) throws IOException {
 		Cookie cookie = null;
 		Cookie[] cookieArr = request.getCookies();
@@ -54,6 +53,12 @@ public class LoginController {
 				System.out.println(cookie.getName());
 			}
 		}
+	return new ModelAndView("home");
+//		redirect(response);
+	}
+	
+	@RequestMapping(value = "/redirect")
+	public ModelAndView redirect(HttpServletResponse response) throws IOException {
 		return new ModelAndView("home");
 	}
 	

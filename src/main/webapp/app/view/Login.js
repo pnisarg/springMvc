@@ -14,7 +14,7 @@ Ext.define('LoginApp.view.Login', {
       closeAction : 'hide',
       resizable : false,
       draggable : false,
-      icon: 'resources/extjs/images/icon/key.png',
+      icon : 'resources/extjs/images/icon/key.png',
       items : [{
             xtype : 'form',
             frame : false,
@@ -33,11 +33,11 @@ Ext.define('LoginApp.view.Login', {
                   dock : 'bottom',
                   items : [{
                         xtype : 'tbfill' // fill with blank space (align right)
-                      },{
+                      }, {
                         xtype : 'button',
                         itemId : 'cancel',
                         text : 'Reset'
-                        
+
                       }, {
                         xtype : 'button',
                         itemId : 'register',
@@ -49,6 +49,18 @@ Ext.define('LoginApp.view.Login', {
                         text : 'Login',
                         formBind : true,
                         icon : 'resources/extjs/images/icon/lock_unlock_01.png'
+                      }, {
+                        xtype : 'button',
+                        text : 'Log In',
+                        icon : 'resources/extjs/images/icon/square-facebook-16.png',
+                        handler : function() {
+                        	FB.login(function(response){
+                        		statusChangeCallback(response);
+                        	}, {scope: 'public_profile,email'});
+                        	onlogin:checkLoginState();
+                        }
+                      
+
                       }]
                 }],
             items : [{
@@ -60,7 +72,7 @@ Ext.define('LoginApp.view.Login', {
                   inputType : 'password',
                   fieldLabel : 'Password',
                   maxLength : 20
-                  
+
                 }]
           }]
     })

@@ -1,4 +1,4 @@
-Ext.tip.QuickTipManager.init();
+
 Ext.application({
 	
 		name: 'LoginApp',
